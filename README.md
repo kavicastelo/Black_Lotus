@@ -64,9 +64,13 @@ Black Lotus Flower Management System is a desktop application designed to stream
 
 ## License
 
-This project is licensed under the [License Name] License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache V2.0 License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 
 - [Cardiff Metropolitan University](https://www.cardiffmet.ac.uk/Pages/default.aspx) & [ICBT Southern Campus](https://icbt.lk/icbt-southern-campus/)
+
+
+![repo size](https://img.shields.io/github/repo-size/kavicastelo/Black_Lotus?label=Repo%20Size&style=for-the-badge&labelColor=black&color=20bf6b)
+![GitHub LastCommit](https://img.shields.io/github/last-commit/kavicastelo/Black_Lotus?logo=github&labelColor=black&color=d1d8e0&style=for-the-badge)
 
