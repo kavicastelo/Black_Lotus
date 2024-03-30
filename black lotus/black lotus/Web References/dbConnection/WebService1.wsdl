@@ -1,0 +1,1243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createConn">
+        <s:complexType />
+      </s:element>
+      <s:element name="createConnResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="createConnResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="loginResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addSalesman">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="age" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="addr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addSalesmanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addSalesmanResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addFlowers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="qunt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ppu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addFlowersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addFlowersResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateFlowers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="qunt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ppu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateFlowersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateFlowersResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sellFlowers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ctp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="caddr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fcat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="qunt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tot" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sellFlowersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sellFlowersResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addcustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="addr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addcustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addcustomerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retriveCustomerData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retriveCustomerDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retriveCustomerDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retriveFlowerData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retriveFlowerDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retriveFlowerDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retriveFlowerDataToAdd">
+        <s:complexType />
+      </s:element>
+      <s:element name="retriveFlowerDataToAddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retriveFlowerDataToAddResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="viewCustomers">
+        <s:complexType />
+      </s:element>
+      <s:element name="viewCustomersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="viewCustomersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="viewSalesmen">
+        <s:complexType />
+      </s:element>
+      <s:element name="viewSalesmenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="viewSalesmenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="viewPurches">
+        <s:complexType />
+      </s:element>
+      <s:element name="viewPurchesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="viewPurchesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="viewCat">
+        <s:complexType />
+      </s:element>
+      <s:element name="viewCatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="viewCatResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCategoriesToCombo">
+        <s:complexType />
+      </s:element>
+      <s:element name="getCategoriesToComboResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCategoriesToComboResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retrevwLogin">
+        <s:complexType />
+      </s:element>
+      <s:element name="retrevwLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retrevwLoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addcategory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addcategoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addcategoryResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteCat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteCatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteCatResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteCatfromFlow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteCatfromFlowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteCatfromFlowResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="createConnSoapIn">
+    <wsdl:part name="parameters" element="tns:createConn" />
+  </wsdl:message>
+  <wsdl:message name="createConnSoapOut">
+    <wsdl:part name="parameters" element="tns:createConnResponse" />
+  </wsdl:message>
+  <wsdl:message name="loginSoapIn">
+    <wsdl:part name="parameters" element="tns:login" />
+  </wsdl:message>
+  <wsdl:message name="loginSoapOut">
+    <wsdl:part name="parameters" element="tns:loginResponse" />
+  </wsdl:message>
+  <wsdl:message name="addSalesmanSoapIn">
+    <wsdl:part name="parameters" element="tns:addSalesman" />
+  </wsdl:message>
+  <wsdl:message name="addSalesmanSoapOut">
+    <wsdl:part name="parameters" element="tns:addSalesmanResponse" />
+  </wsdl:message>
+  <wsdl:message name="addFlowersSoapIn">
+    <wsdl:part name="parameters" element="tns:addFlowers" />
+  </wsdl:message>
+  <wsdl:message name="addFlowersSoapOut">
+    <wsdl:part name="parameters" element="tns:addFlowersResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateFlowersSoapIn">
+    <wsdl:part name="parameters" element="tns:updateFlowers" />
+  </wsdl:message>
+  <wsdl:message name="updateFlowersSoapOut">
+    <wsdl:part name="parameters" element="tns:updateFlowersResponse" />
+  </wsdl:message>
+  <wsdl:message name="sellFlowersSoapIn">
+    <wsdl:part name="parameters" element="tns:sellFlowers" />
+  </wsdl:message>
+  <wsdl:message name="sellFlowersSoapOut">
+    <wsdl:part name="parameters" element="tns:sellFlowersResponse" />
+  </wsdl:message>
+  <wsdl:message name="addcustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:addcustomer" />
+  </wsdl:message>
+  <wsdl:message name="addcustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:addcustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="retriveCustomerDataSoapIn">
+    <wsdl:part name="parameters" element="tns:retriveCustomerData" />
+  </wsdl:message>
+  <wsdl:message name="retriveCustomerDataSoapOut">
+    <wsdl:part name="parameters" element="tns:retriveCustomerDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="retriveFlowerDataSoapIn">
+    <wsdl:part name="parameters" element="tns:retriveFlowerData" />
+  </wsdl:message>
+  <wsdl:message name="retriveFlowerDataSoapOut">
+    <wsdl:part name="parameters" element="tns:retriveFlowerDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="retriveFlowerDataToAddSoapIn">
+    <wsdl:part name="parameters" element="tns:retriveFlowerDataToAdd" />
+  </wsdl:message>
+  <wsdl:message name="retriveFlowerDataToAddSoapOut">
+    <wsdl:part name="parameters" element="tns:retriveFlowerDataToAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="viewCustomersSoapIn">
+    <wsdl:part name="parameters" element="tns:viewCustomers" />
+  </wsdl:message>
+  <wsdl:message name="viewCustomersSoapOut">
+    <wsdl:part name="parameters" element="tns:viewCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="viewSalesmenSoapIn">
+    <wsdl:part name="parameters" element="tns:viewSalesmen" />
+  </wsdl:message>
+  <wsdl:message name="viewSalesmenSoapOut">
+    <wsdl:part name="parameters" element="tns:viewSalesmenResponse" />
+  </wsdl:message>
+  <wsdl:message name="viewPurchesSoapIn">
+    <wsdl:part name="parameters" element="tns:viewPurches" />
+  </wsdl:message>
+  <wsdl:message name="viewPurchesSoapOut">
+    <wsdl:part name="parameters" element="tns:viewPurchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="viewCatSoapIn">
+    <wsdl:part name="parameters" element="tns:viewCat" />
+  </wsdl:message>
+  <wsdl:message name="viewCatSoapOut">
+    <wsdl:part name="parameters" element="tns:viewCatResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCategoriesToComboSoapIn">
+    <wsdl:part name="parameters" element="tns:getCategoriesToCombo" />
+  </wsdl:message>
+  <wsdl:message name="getCategoriesToComboSoapOut">
+    <wsdl:part name="parameters" element="tns:getCategoriesToComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrevwLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:retrevwLogin" />
+  </wsdl:message>
+  <wsdl:message name="retrevwLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:retrevwLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="addcategorySoapIn">
+    <wsdl:part name="parameters" element="tns:addcategory" />
+  </wsdl:message>
+  <wsdl:message name="addcategorySoapOut">
+    <wsdl:part name="parameters" element="tns:addcategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteCatSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteCat" />
+  </wsdl:message>
+  <wsdl:message name="deleteCatSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteCatResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteCatfromFlowSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteCatfromFlow" />
+  </wsdl:message>
+  <wsdl:message name="deleteCatfromFlowSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteCatfromFlowResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="createConnHttpGetIn" />
+  <wsdl:message name="createConnHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="loginHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="pass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="loginHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="addSalesmanHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="tp" type="s:string" />
+    <wsdl:part name="age" type="s:string" />
+    <wsdl:part name="addr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addSalesmanHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="addFlowersHttpGetIn">
+    <wsdl:part name="cat" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="qunt" type="s:string" />
+    <wsdl:part name="ppu" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addFlowersHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="updateFlowersHttpGetIn">
+    <wsdl:part name="cat" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="qunt" type="s:string" />
+    <wsdl:part name="ppu" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateFlowersHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="sellFlowersHttpGetIn">
+    <wsdl:part name="cid" type="s:string" />
+    <wsdl:part name="cname" type="s:string" />
+    <wsdl:part name="ctp" type="s:string" />
+    <wsdl:part name="caddr" type="s:string" />
+    <wsdl:part name="fid" type="s:string" />
+    <wsdl:part name="fcat" type="s:string" />
+    <wsdl:part name="fname" type="s:string" />
+    <wsdl:part name="qunt" type="s:string" />
+    <wsdl:part name="tot" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sellFlowersHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="addcustomerHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="tp" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="addr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addcustomerHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="retriveCustomerDataHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="retriveCustomerDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="retriveFlowerDataHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="retriveFlowerDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="retriveFlowerDataToAddHttpGetIn" />
+  <wsdl:message name="retriveFlowerDataToAddHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="viewCustomersHttpGetIn" />
+  <wsdl:message name="viewCustomersHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="viewSalesmenHttpGetIn" />
+  <wsdl:message name="viewSalesmenHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="viewPurchesHttpGetIn" />
+  <wsdl:message name="viewPurchesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="viewCatHttpGetIn" />
+  <wsdl:message name="viewCatHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getCategoriesToComboHttpGetIn" />
+  <wsdl:message name="getCategoriesToComboHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="retrevwLoginHttpGetIn" />
+  <wsdl:message name="retrevwLoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="addcategoryHttpGetIn">
+    <wsdl:part name="cat" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addcategoryHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="deleteCatHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteCatHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="deleteCatfromFlowHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteCatfromFlowHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createConn">
+      <wsdl:input message="tns:createConnSoapIn" />
+      <wsdl:output message="tns:createConnSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <wsdl:input message="tns:loginSoapIn" />
+      <wsdl:output message="tns:loginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addSalesman">
+      <wsdl:input message="tns:addSalesmanSoapIn" />
+      <wsdl:output message="tns:addSalesmanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addFlowers">
+      <wsdl:input message="tns:addFlowersSoapIn" />
+      <wsdl:output message="tns:addFlowersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateFlowers">
+      <wsdl:input message="tns:updateFlowersSoapIn" />
+      <wsdl:output message="tns:updateFlowersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sellFlowers">
+      <wsdl:input message="tns:sellFlowersSoapIn" />
+      <wsdl:output message="tns:sellFlowersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addcustomer">
+      <wsdl:input message="tns:addcustomerSoapIn" />
+      <wsdl:output message="tns:addcustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retriveCustomerData">
+      <wsdl:input message="tns:retriveCustomerDataSoapIn" />
+      <wsdl:output message="tns:retriveCustomerDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retriveFlowerData">
+      <wsdl:input message="tns:retriveFlowerDataSoapIn" />
+      <wsdl:output message="tns:retriveFlowerDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retriveFlowerDataToAdd">
+      <wsdl:input message="tns:retriveFlowerDataToAddSoapIn" />
+      <wsdl:output message="tns:retriveFlowerDataToAddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="viewCustomers">
+      <wsdl:input message="tns:viewCustomersSoapIn" />
+      <wsdl:output message="tns:viewCustomersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="viewSalesmen">
+      <wsdl:input message="tns:viewSalesmenSoapIn" />
+      <wsdl:output message="tns:viewSalesmenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="viewPurches">
+      <wsdl:input message="tns:viewPurchesSoapIn" />
+      <wsdl:output message="tns:viewPurchesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="viewCat">
+      <wsdl:input message="tns:viewCatSoapIn" />
+      <wsdl:output message="tns:viewCatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCategoriesToCombo">
+      <wsdl:input message="tns:getCategoriesToComboSoapIn" />
+      <wsdl:output message="tns:getCategoriesToComboSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retrevwLogin">
+      <wsdl:input message="tns:retrevwLoginSoapIn" />
+      <wsdl:output message="tns:retrevwLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addcategory">
+      <wsdl:input message="tns:addcategorySoapIn" />
+      <wsdl:output message="tns:addcategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCat">
+      <wsdl:input message="tns:deleteCatSoapIn" />
+      <wsdl:output message="tns:deleteCatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCatfromFlow">
+      <wsdl:input message="tns:deleteCatfromFlowSoapIn" />
+      <wsdl:output message="tns:deleteCatfromFlowSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebService1HttpGet">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createConn">
+      <wsdl:input message="tns:createConnHttpGetIn" />
+      <wsdl:output message="tns:createConnHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <wsdl:input message="tns:loginHttpGetIn" />
+      <wsdl:output message="tns:loginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addSalesman">
+      <wsdl:input message="tns:addSalesmanHttpGetIn" />
+      <wsdl:output message="tns:addSalesmanHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addFlowers">
+      <wsdl:input message="tns:addFlowersHttpGetIn" />
+      <wsdl:output message="tns:addFlowersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateFlowers">
+      <wsdl:input message="tns:updateFlowersHttpGetIn" />
+      <wsdl:output message="tns:updateFlowersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sellFlowers">
+      <wsdl:input message="tns:sellFlowersHttpGetIn" />
+      <wsdl:output message="tns:sellFlowersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addcustomer">
+      <wsdl:input message="tns:addcustomerHttpGetIn" />
+      <wsdl:output message="tns:addcustomerHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retriveCustomerData">
+      <wsdl:input message="tns:retriveCustomerDataHttpGetIn" />
+      <wsdl:output message="tns:retriveCustomerDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retriveFlowerData">
+      <wsdl:input message="tns:retriveFlowerDataHttpGetIn" />
+      <wsdl:output message="tns:retriveFlowerDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retriveFlowerDataToAdd">
+      <wsdl:input message="tns:retriveFlowerDataToAddHttpGetIn" />
+      <wsdl:output message="tns:retriveFlowerDataToAddHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="viewCustomers">
+      <wsdl:input message="tns:viewCustomersHttpGetIn" />
+      <wsdl:output message="tns:viewCustomersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="viewSalesmen">
+      <wsdl:input message="tns:viewSalesmenHttpGetIn" />
+      <wsdl:output message="tns:viewSalesmenHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="viewPurches">
+      <wsdl:input message="tns:viewPurchesHttpGetIn" />
+      <wsdl:output message="tns:viewPurchesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="viewCat">
+      <wsdl:input message="tns:viewCatHttpGetIn" />
+      <wsdl:output message="tns:viewCatHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCategoriesToCombo">
+      <wsdl:input message="tns:getCategoriesToComboHttpGetIn" />
+      <wsdl:output message="tns:getCategoriesToComboHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retrevwLogin">
+      <wsdl:input message="tns:retrevwLoginHttpGetIn" />
+      <wsdl:output message="tns:retrevwLoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addcategory">
+      <wsdl:input message="tns:addcategoryHttpGetIn" />
+      <wsdl:output message="tns:addcategoryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCat">
+      <wsdl:input message="tns:deleteCatHttpGetIn" />
+      <wsdl:output message="tns:deleteCatHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCatfromFlow">
+      <wsdl:input message="tns:deleteCatfromFlowHttpGetIn" />
+      <wsdl:output message="tns:deleteCatfromFlowHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createConn">
+      <soap:operation soapAction="http://tempuri.org/createConn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <soap:operation soapAction="http://tempuri.org/login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addSalesman">
+      <soap:operation soapAction="http://tempuri.org/addSalesman" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addFlowers">
+      <soap:operation soapAction="http://tempuri.org/addFlowers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateFlowers">
+      <soap:operation soapAction="http://tempuri.org/updateFlowers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sellFlowers">
+      <soap:operation soapAction="http://tempuri.org/sellFlowers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcustomer">
+      <soap:operation soapAction="http://tempuri.org/addcustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retriveCustomerData">
+      <soap:operation soapAction="http://tempuri.org/retriveCustomerData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retriveFlowerData">
+      <soap:operation soapAction="http://tempuri.org/retriveFlowerData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retriveFlowerDataToAdd">
+      <soap:operation soapAction="http://tempuri.org/retriveFlowerDataToAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="viewCustomers">
+      <soap:operation soapAction="http://tempuri.org/viewCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="viewSalesmen">
+      <soap:operation soapAction="http://tempuri.org/viewSalesmen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="viewPurches">
+      <soap:operation soapAction="http://tempuri.org/viewPurches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="viewCat">
+      <soap:operation soapAction="http://tempuri.org/viewCat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCategoriesToCombo">
+      <soap:operation soapAction="http://tempuri.org/getCategoriesToCombo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrevwLogin">
+      <soap:operation soapAction="http://tempuri.org/retrevwLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcategory">
+      <soap:operation soapAction="http://tempuri.org/addcategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCat">
+      <soap:operation soapAction="http://tempuri.org/deleteCat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCatfromFlow">
+      <soap:operation soapAction="http://tempuri.org/deleteCatfromFlow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createConn">
+      <soap12:operation soapAction="http://tempuri.org/createConn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <soap12:operation soapAction="http://tempuri.org/login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addSalesman">
+      <soap12:operation soapAction="http://tempuri.org/addSalesman" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addFlowers">
+      <soap12:operation soapAction="http://tempuri.org/addFlowers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateFlowers">
+      <soap12:operation soapAction="http://tempuri.org/updateFlowers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sellFlowers">
+      <soap12:operation soapAction="http://tempuri.org/sellFlowers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcustomer">
+      <soap12:operation soapAction="http://tempuri.org/addcustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retriveCustomerData">
+      <soap12:operation soapAction="http://tempuri.org/retriveCustomerData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retriveFlowerData">
+      <soap12:operation soapAction="http://tempuri.org/retriveFlowerData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retriveFlowerDataToAdd">
+      <soap12:operation soapAction="http://tempuri.org/retriveFlowerDataToAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="viewCustomers">
+      <soap12:operation soapAction="http://tempuri.org/viewCustomers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="viewSalesmen">
+      <soap12:operation soapAction="http://tempuri.org/viewSalesmen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="viewPurches">
+      <soap12:operation soapAction="http://tempuri.org/viewPurches" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="viewCat">
+      <soap12:operation soapAction="http://tempuri.org/viewCat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCategoriesToCombo">
+      <soap12:operation soapAction="http://tempuri.org/getCategoriesToCombo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrevwLogin">
+      <soap12:operation soapAction="http://tempuri.org/retrevwLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcategory">
+      <soap12:operation soapAction="http://tempuri.org/addcategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCat">
+      <soap12:operation soapAction="http://tempuri.org/deleteCat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCatfromFlow">
+      <soap12:operation soapAction="http://tempuri.org/deleteCatfromFlow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1HttpGet" type="tns:WebService1HttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createConn">
+      <http:operation location="/createConn" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <http:operation location="/login" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addSalesman">
+      <http:operation location="/addSalesman" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addFlowers">
+      <http:operation location="/addFlowers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateFlowers">
+      <http:operation location="/updateFlowers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sellFlowers">
+      <http:operation location="/sellFlowers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcustomer">
+      <http:operation location="/addcustomer" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retriveCustomerData">
+      <http:operation location="/retriveCustomerData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retriveFlowerData">
+      <http:operation location="/retriveFlowerData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retriveFlowerDataToAdd">
+      <http:operation location="/retriveFlowerDataToAdd" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="viewCustomers">
+      <http:operation location="/viewCustomers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="viewSalesmen">
+      <http:operation location="/viewSalesmen" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="viewPurches">
+      <http:operation location="/viewPurches" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="viewCat">
+      <http:operation location="/viewCat" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCategoriesToCombo">
+      <http:operation location="/getCategoriesToCombo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrevwLogin">
+      <http:operation location="/retrevwLogin" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcategory">
+      <http:operation location="/addcategory" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCat">
+      <http:operation location="/deleteCat" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCatfromFlow">
+      <http:operation location="/deleteCatfromFlow" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="https://localhost:44367/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="https://localhost:44367/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1HttpGet" binding="tns:WebService1HttpGet">
+      <http:address location="https://localhost:44367/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
